@@ -1,0 +1,593 @@
+#header-wrap{
+	width:100%;
+	height:0px;    /*상단 메뉴 높이*/
+	background-color:white;
+	top:0;     /*맨 상단에 위치*/
+	position:fixed;    /*위치 fixed*/
+	z-index: 7;
+}
+#contents{
+	font-family: "Malgun Gothic";
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+	background-color:#f8f9fa;
+	margin:0 auto;   /*컨텐츠 중앙 정렬*/    /*상단 메뉴 높이만큼을 띄워주고 컨텐츠 시작*/
+}
+ul{
+   list-style:none;
+   padding: 0;
+}
+body{
+	margin: 0;
+}
+input[type="text"]:disabled {
+  background: white;
+}
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+/*********************************************************************************/
+/* copyraight                                                                    */
+/*********************************************************************************/
+#footer-c{
+	position: relative;
+	width: 100%;
+	height: 20%;
+	background-color:#000;
+}
+
+#footerbox
+{
+	position:absolute;
+	left:10%;
+    top:30%;
+}
+#footerbox p
+{
+	padding-left: 10px;
+	font-size: 0.75em;
+	color: #d8d8d8;
+}
+	
+
+/*********************************************************************************/
+/* logo                                                                          */
+/*********************************************************************************/
+#logo
+{
+	padding: 0.5em 0em;
+	background: #000;
+	text-transform: uppercase;
+
+}
+
+#logo h1
+{
+	padding-left: 20px;
+	margin-bottom: 0px;
+    margin-top: 0px;
+	text-align: left;
+	font-weight: 900;
+	font-size: 2em;
+
+}
+
+/*********************************************************************************/
+/* Menu                                                                          */
+/*********************************************************************************/
+#menu ul
+{
+	margin: 0;
+	padding: 0px 0px 0px 0px;
+	list-style: none;
+	line-height: normal;
+	text-align: center;
+}
+	
+#menu li
+{
+	display: inline-block;
+}
+	
+#menu a
+{
+	display: block;
+	padding: 1em 2em;
+	letter-spacing: 1px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 1em;
+	font-weight: 700;
+	color: #000000;
+}
+	
+#menu .current_page_item a
+{
+	border-radius: 30px;
+	border: 1px solid;
+	border-color: rgba(255,255,255,.2);
+}
+/*********************************************************************************/
+/* Modal                                                                         */
+/*********************************************************************************/
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 10000; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+    
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 30%; /* Could be more or less, depending on screen size */   
+	border-radius: 10px;	
+}
+
+
+
+.button_base {
+	font-weight: bold;
+	border-radius: 15px;
+	margin: 0;
+    border: 0;
+    font-size: 12px;
+    position: relative;
+    margin-top: 10px;
+    margin-left: -100px;
+	padding-top: 0px;
+    width: 100%;
+    height: 60px;
+    text-align : center;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+    cursor: default;
+}
+.button_base:hover {
+    cursor: pointer;
+}
+.b01_simple_rollover {
+    margin-left: 0px;
+	height : 30px;
+	color: #ffffff;
+    border: #000000 solid 1px;
+    padding: 10px;
+    background-color: #000000;
+}
+
+.b01_simple_rollover:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
+/*********************************************************************************/
+/* card_main                                                                       */
+/*********************************************************************************/
+@import url('https://fonts.googleapis.com/css?family=Jua&display=swap');
+
+#all{
+	overflow:auto; 
+	/*height:calc(100% - 40px);*/
+	height:850px;
+	margin-top: 0px;
+}
+#mcard{
+	margin-top: 10px;
+	background-color: white;
+	width: 420px;
+	height: 130px;
+	border-radius: 10px;
+}
+#datecard{
+	width: 420px;
+	height: 68.686;
+	background-color: black;
+}
+#mname{
+	display:inline-block;
+	font-family: 'Jua', sans-serif;
+	color: black;
+	font-size: 15pt;
+	padding-top: 30px;
+	padding-left: 28px;
+	margin: 0;
+}
+#mstat-p{
+	display:inline-block;
+	margin: 0;
+	color: #1CC88A;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 12pt;
+	margin-left: 5px;
+}
+#mstat-s{
+	display:inline-block;
+	margin: 0;
+	color: #FEAC63;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 12pt;
+	margin-left: 5px;
+}
+#mstat-f{
+	display:inline-block;
+	margin: 0;
+	color: #ff7473;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 12pt;
+	margin-left: 5px;
+}
+#mtext{
+	color: black;
+	font-size: 10pt;
+	padding-left: 28px;
+	margin: 0;
+}
+#mbt{
+	cursor: pointer;
+	font-family: 'Jua', sans-serif;
+	border-radius: 5px;
+	color: white;
+	width: 150px;	
+	height: 24px;
+	background-color: #0099FF;
+	font-size: 10px;
+	margin: 0;
+	margin-left: 250px;
+}
+#mbtp{
+	margin: 0;
+	float:right;
+	color: white;
+	font-size: 15px;
+	padding-top:3px;
+	padding-right: 28px;
+}
+#mno{
+    margin: 0px;
+    margin-bottom: 10px;
+    width: 420px;
+    height: 50px;
+    color: black;
+    font-size: 11pt;
+    text-align: center;
+	margin-top: 10px
+}
+@media screen and (max-width: 768px) {
+	#all{
+		overflow:auto; 
+		height: calc(100% - 80px);
+	}
+	#mcard{
+		border-radius: 10px;
+		margin: 0px;
+		margin-bottom: 10px;
+		background-color: white;
+		width: 200px;
+		height: 160px;
+	}
+	#datecard{
+		width: 200px;
+		height: 142.938px;
+		margin-bottom: 10px;
+		background-color: black;
+	}
+	#mname{
+		display:block;
+		font-family: 'Jua', sans-serif;
+		color: black;
+		font-size: 15pt;
+		padding-top: 30px;
+		padding-left: 28px;
+		margin: 0;
+	}
+	#mstat-p{
+		display:block;
+		margin: 0;
+		color: #1CC88A;
+		font-family: 'Noto Sans KR', sans-serif;
+		font-size: 12pt;
+		padding-left: 28px;
+	}
+	#mstat-s{
+		display:block;
+		margin: 0;
+		color: #FEAC63;
+		font-family: 'Noto Sans KR', sans-serif;
+		font-size: 12pt;
+		padding-left: 28px;
+	}
+	#mstat-f{
+		display:block;
+		margin: 0;
+		color: #ff7473;
+		font-family: 'Noto Sans KR', sans-serif;
+		font-size: 12pt;
+		padding-left: 28px;
+	}
+	#mtext{
+		color: black;
+		font-size: 10pt;
+		padding-left: 28px;
+		margin: 0;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	#mbt{
+		font-family: 'Jua', sans-serif;
+		border-radius: 5px;
+		color: white;
+		width: 150px;	
+		height: 24px;
+		background-color: #0099FF;
+		font-size: 10px;
+		margin: 0;
+		margin-top: 5px;
+		margin-left: 30px;
+	}
+	#mbtp{
+		margin: 0;
+		float:right;
+		color: white;
+		font-size: 15px;
+		padding-top:3px;
+		padding-right: 28px;
+	}
+	#mno {
+		margin: 0px;
+		margin-bottom: 10px;
+		width: 200px;
+		height: 50px;
+		color: black;
+		font-size: 11pt;
+		text-align: left;
+	}
+
+}
+/*********************************************************************************/
+/* search                                                                */
+/*********************************************************************************/
+.search_div{
+    width: 390px;
+    height: 30px;
+    border-radius: 30px;
+    background: #fff;
+	text-align: left;
+
+}
+.search_div p{
+	color: gray;
+	padding-left: 10px;
+	margin: 0;
+	display:line-block;
+}
+@media screen and (max-width: 768px) {
+	.search_div{
+		width: 200px;
+		height: 30px;
+		border-radius: 30px;
+		background: #fff;
+		text-align: left;
+
+	}
+	.search_div p{
+		color: gray;
+		padding-left: 10px;
+		margin: 0;
+		display:line-block;
+	}
+}
+/*********************************************************************************/
+/* sidebar                                                           */
+/*********************************************************************************/
+button {
+    outline: none;
+}
+button .sidebar-btn {
+	color: #fff;
+    font-weight: bold;
+}
+.sidebar {
+	background-color: #fff;
+    width: 525px;
+    height: 100%;
+	position: fixed;
+    top: 0;
+    right: -525px;
+    z-index: 9999;
+	border-radius: 2px;
+	box-shadow: 1px 5px 17px rgba(34,34,34,.3);
+}
+.sidebar > .sidebar-content {
+    position: absolute;
+	top: 20px;
+    right: 90px;
+    color: #fff;
+}
+.sidebar button {
+    background-color: black;
+	display: block;
+    position: absolute;
+	top: 45%;
+    right: 525px;
+    width: 30px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+	border: none;
+	cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+	button {
+		outline: none;
+	}
+	button .sidebar-btn {
+		color: #fff;
+		font-weight: bold;
+	}
+	.sidebar {
+		background-color: #fff;
+		width: 300px;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		right: -300px;
+		z-index: 9999;
+	}
+	.sidebar > .sidebar-content {
+		height: 100%;
+		position: absolute;
+		top: 20px;
+		right: 90px;
+		color: #fff;
+	}
+	.sidebar button {
+		background-color: black;
+		display: block;
+		position: absolute;
+		top: 45%;
+		right: 300px;
+		width: 30px;
+		height: 38px;
+		line-height: 38px;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		border: none;
+	}
+}
+/*********************************************************************************/
+/* book mark                                                          */
+/*********************************************************************************/
+.bookmark {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    position: fixed;
+    left: 10px;
+    bottom: 2%;
+	z-index:5
+}
+/*********************************************************************************/
+/* maskmodal                                                     */
+/*********************************************************************************/
+.maskm-content{
+	width: 280px;
+    height: 250px;
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.maskmodal{
+    display: none;
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.57);
+    z-index: 10000;
+}
+.maskname{
+	font-size: 25px;
+    font-weight: bold;
+    line-height: 1.21;
+    color: #121212;
+    position: absolute;
+    left: 20px;
+    top: 45px;
+}
+.maskco{
+    position: absolute;
+    top: 80px;
+    left: 20px;
+}
+.masktitle-p{
+	font-size: 12pt;
+    margin-bottom: 10px;
+	font-family: 'Noto Sans KR', sans-serif;
+	color:green;
+}
+.masktitle-s{
+	font-size: 12pt;
+    margin-bottom: 10px;
+	font-family: 'Noto Sans KR', sans-serif;
+	color: #f7e600;
+}
+.masktitle-f{
+	font-size: 12pt;
+    margin-bottom: 10px;
+	font-family: 'Noto Sans KR', sans-serif;
+	color:red;
+}
+.masktitle-soldout{
+	font-size: 12pt;
+    margin-bottom: 10px;
+	font-family: 'Noto Sans KR', sans-serif;
+	color:gray;
+}
+
+
+.masktext{
+	font-size: 12pt;
+    margin-bottom: 10px;
+	font-family: 'Noto Sans KR', sans-serif;
+	color : gray;
+}
+.maskbt{
+	cursor: pointer;
+	height: 40px;
+    border-radius: 10px;
+    background-color: #0099FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    left: 15px;
+    right: 15px;
+    position: absolute;
+    bottom: 30px;
+}
+/*********************************************************************************/
+/* sizeup                                                   */
+/*********************************************************************************/
+.sizeup{
+	display: none;
+	background: white;
+	width: 280px;
+	height: 40px;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+	text-align: center;
+    transform: translate(-50%, -50%);
+	background-color: rgba(255, 255, 255, 0.77);
+	color: black;
+	z-index: 9997;
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+}
+
+

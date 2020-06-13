@@ -1,0 +1,153 @@
+  <!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>마스크파인더 - MARSK_FINDER</title>
+<meta name="keywords" content="마스크, 마스크파인더, MASKFINDER" />
+<meta name="description" content="내 집주 변 마스크 재고 현황을 확인해보세요!" />
+<meta name="viewport" content="width=device-width">
+<meta name="naver-site-verification" content="42d02e3feffc2019c3eb67935246a997e34696c7"/>
+<meta name="google-site-verification" content="fnzhYgRmtTwrLpTX3eUfzfEWqwiPYoFzLnRJtaywOBY" />
+<link rel="shortcut icon" href="https://arcspace.kr/project/maskfinder/mask/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Jua|Stylish&display=swap" rel="stylesheet">
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=f3e4486bd3c8698570d63d3ef32346ac&libraries=services,clusterer"></script>
+<script src="https://arcspace.kr/project/maskfinder/js/jquery-1.11.3.min.js"></script>
+<script src="https://arcspace.kr/project/maskfinder/js/jquery-ui-1.11.4.custom.min.js"></script>
+<script src="https://arcspace.kr/project/maskfinder/js/test.js?ver=0.6"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160348325-1"></script>
+<link href="./default.css?ver=0.8" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+<script src="https://work6.kr/plugin/plugin_link/37"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-160348325-1');
+</script>
+<script>
+	var tag = document.createElement("script");
+	tag.src = "./main.js";
+	document.getElementsByTagName("head")[0].appendChild(tag);
+	</script>
+</head>
+<html>
+<script type="text/javascript">
+	if (document.location.protocol == 'http:') {
+		document.location.href = document.location.href.replace('http:', 'https:');
+	}
+</script>
+<script data-ad-client="ca-pub-7666662196500555" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<div class="sizeup">지도를 확대해주세요.</div>
+<div id="myModal" class="modal">
+<!-- Modal content -->
+<div class="modal-content" style="width: 300px;">
+<hr/>
+<p style="text-align: center;"><span style="font-size: 14pt;"><b><span style="font-size: 24pt;">마스크.메인.한국</span></b></span></p>
+<hr/>
+<p style="text-align: left; line-height: 1.5;">해당 데이터는 5~10분 정도의 차이가 있습니다.<br /><br/>서비스는 08:00~23:00까지 운영됩니다.<br/><br/>데이터 공개 문의 (한국정보화진흥원) maskdata@nia.or.kr<br/><br/>문의 : eungyeole@naver.com</p>
+<br/>
+<hr/>
+<center><div class="button_base b01_simple_rollover" onClick="close_pop();" style="padding-top: 5px;">
+	<span class="pop_bt" style="font-size: 10pt;" >
+		확인
+	</span>
+</div></center>
+</div>	 
+</div>
+<div id="mmodal" class="maskmodal">
+<div class="maskm-content">
+<img src="https://arcspace.kr/project/maskfinder/mask/closebt.png" style="width: 45px;margin-left: 225px;margin-top: 10px; cursor: pointer;" onClick="close_mmodal();">
+<div class="maskname" style="font-family: 'Do Hyeon', sans-serif;"></div>
+<div class="maskco">
+<div class="masktitle-p"></div>
+<div class="masktext"></div>
+<div class="masktext"></div>
+</div>
+<div class="maskbt"><img src="https://arcspace.kr/project/maskfinder/mask/map.png" style="padding-right: 5px;">지도에서 보기</div>
+</div>
+</div>
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		$('#myModal').show();
+	});
+	//팝업 Close 기능
+	function close_pop(flag) {
+		$('#myModal').hide();
+	};
+	function close_mmodal(flag) {
+		$('#mmodal').hide();
+	};
+</script>
+<body id="contents">
+<center>
+<div id="map" style="position:absolute; width:100%;height:100%; z-index: 4; display:none">
+</div>
+<br/>
+</center>
+<script>
+	function foo() {
+		var mql = window.matchMedia("screen and (max-width: 768px)");
+		if (mql.matches) {
+			$('#book').empty();
+			$('#book').append('<a href="intent://addshortcut?url=https://arcspace.kr/project/maskfinder/index.html&amp;icon=https://arcspace.kr/project/maskfinder/mask/favicon.ico&amp;title=마스크파인더&oq=%ED%8C%A8%EC%85%98%ED%92%80&amp;serviceCode=sports&amp;version=7#Intent;scheme=naversearchapp;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.nhn.android.search;end" onclick="nclk(this,\'fot.shorcut\',\'\',\'\',event);" class="bookmark"><i class="fa fa-bookmark" style="margin-top: 10px;"></i></a>');
+		}else{
+			$('#book').empty();
+		}
+		setTimeout(foo, 1000);
+	}
+	foo();
+</script>
+<div id="book"></div>
+<aside class="sidebar">
+	<div class="sidebar-content">
+	<center><div class='search_div' onclick="sample5_execDaumPostcode()"><p id="sample5_address">주소를 입력해주세요</p><hr></div></center>
+	<!--<div id="datecard">
+	<script>
+		function foo() {
+			$('#datecard').empty();
+			var mql = window.matchMedia("screen and (max-width: 768px)");
+			if (mql.matches) {
+				$("#datecard").append('<img src="https://arcspace.kr/project/maskfinder/mask/mask5m.png" style="width: 200px; z-index:2000;"/>');
+				$("#datecard").append('<p id="today" style="font-family: \'Jua\', sans-serif; text-align: left;line-height: 1.5;color:#E56C59;z-index:3000;margin-top:-48px;margin-bottom: 0px;margin-left: 50px;font-size: 20pt;"></p>');
+				$('#book').empty();
+				$('#book').append('<a href="intent://addshortcut?url=https://arcspace.kr/project/maskfinder/index.html&amp;icon=https://arcspace.kr/project/maskfinder/mask/favicon.ico&amp;title=마스크파인더&oq=%ED%8C%A8%EC%85%98%ED%92%80&amp;serviceCode=sports&amp;version=7#Intent;scheme=naversearchapp;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.nhn.android.search;end" onclick="nclk(this,\'fot.shorcut\',\'\',\'\',event);" class="bookmark"><i class="fa fa-bookmark" style="margin-top: 10px;"></i></a>');
+				
+			}else{
+				$("#datecard").append('<img src="https://arcspace.kr/project/maskfinder/mask/mask5.png" style="width: 420px; z-index:2000;"/>');
+				$("#datecard").append('<p id="today" style="font-family: \'Jua\', sans-serif; text-align: left;line-height: 1.5;color:#E56C59;z-index:3000;margin-top:-55px;margin-bottom: 0px;margin-left: 280px;font-size: 20pt;"></p>');
+				$('#book').empty();
+			}
+			const weekday = ["일","월","화","수","목","금","토"];
+			switch (weekday[new Date().getDay()]){
+			case "일":case "토":
+				document.getElementById("today").innerHTML = "모두"; break;
+			case "월":
+				document.getElementById("today").innerHTML = "1,6";break;
+			case "화":
+				document.getElementById("today").innerHTML = "2,7";break;
+			case "수":
+				document.getElementById("today").innerHTML = "3,8";break;
+			case "목":
+				document.getElementById("today").innerHTML = "4,9";break;
+			case "금":
+				document.getElementById("today").innerHTML = "5,0";break;
+			}
+			setTimeout(foo, 1000);
+		}
+		foo();
+	</script>
+	</div>-->
+	<div id="all"> 
+
+	</div>
+</div>
+<button><span class="sidebar-btn"></span></button>
+</aside>
+</center>
+</body>
+</html>
